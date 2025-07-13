@@ -1,112 +1,113 @@
 # AI Talk Slides - Development Tasks
 
 ## 1. Project Setup (15 min)
-- [ ] Initialize Next.js project: `npx create-next-app@latest ai-tech-talk --typescript --tailwind --app --use-npm`
-- [ ] Navigate to project: `cd ai-tech-talk`
-- [ ] Install dependencies: `npm install framer-motion lucide-react react-use-keypress @vercel/analytics`
-- [ ] Initialize git repository
-- [ ] Create initial commit
+- [x] Initialize Next.js project: `npx create-next-app@latest ai-tech-talk --typescript --tailwind --app --use-npm`
+- [x] Navigate to project: `cd ai-tech-talk`
+- [x] Install dependencies: `npm install framer-motion lucide-react react-use-keypress @vercel/analytics --legacy-peer-deps`
+- [x] Initialize git repository
+- [x] Create initial commit
 
 ## 2. File Structure Setup (10 min)
 - [ ] Create folder structure:
 ```
 ai-tech-talk/
-├── app/
-│   ├── layout.tsx
-│   ├── page.tsx
-│   ├── slide/
-│   │   └── [id]/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── slide/
+│   │   │   └── [id]/
+│   │   │       └── page.tsx
+│   │   └── resources/
 │   │       └── page.tsx
-│   └── resources/
-│       └── page.tsx
-├── components/
-│   ├── SlideLayout.tsx
-│   ├── SlideNavigation.tsx
-│   ├── ResourceLink.tsx
-│   ├── ArrowDiagram.tsx
-│   ├── TierCard.tsx
-│   └── CodeBlock.tsx
-├── lib/
-│   ├── slides.ts
-│   └── constants.ts
+│   ├── components/
+│   │   ├── SlideLayout.tsx
+│   │   ├── SlideNavigation.tsx
+│   │   ├── ResourceLink.tsx
+│   │   ├── ArrowDiagram.tsx
+│   │   ├── TierCard.tsx
+│   │   └── CodeBlock.tsx
+│   └── lib/
+│       ├── slides.ts
+│       └── constants.ts
 └── public/
-└── images/
-└── (screenshots will go here)
+    └── images/
+        └── (screenshots will go here)
 ```
 - [ ] Set up TypeScript types for slides
 - [ ] Configure Tailwind for large text presentation
 
 ## 3. Core Layout & Navigation (30 min)
 - [ ] Create SlideLayout component with:
-- [ ] Dark theme styling
-- [ ] Consistent padding/margins
-- [ ] Slide number indicator
-- [ ] Resources button (floating)
+  - [ ] Dark theme styling
+  - [ ] Consistent padding/margins
+  - [ ] Slide number indicator
+  - [ ] Resources button (floating)
 - [ ] Implement SlideNavigation:
-- [ ] Arrow key navigation
-- [ ] Spacebar for next
-- [ ] Click/tap navigation
-- [ ] Slide progress bar
+  - [ ] Arrow key navigation
+  - [ ] Spacebar for next
+  - [ ] Click/tap navigation
+  - [ ] Slide progress bar
 - [ ] Add keyboard event listeners
 
 ## 4. Slide Content Implementation (45 min)
 - [ ] Create slides data structure in `/lib/slides.ts`
 - [ ] Implement dynamic routing for slides
 - [ ] Create slide components:
-- [ ] Title slide (centered, large)
-- [ ] Content slide (bullets, text)
-- [ ] Split screen slide (for guardrails)
-- [ ] Emoji list slide (for toolkit)
+  - [ ] Title slide (centered, large)
+  - [ ] Content slide (bullets, text)
+  - [ ] Split screen slide (for guardrails)
+  - [ ] Emoji list slide (for toolkit)
 - [ ] Add slide transitions with Framer Motion
 
 ## 5. Special Components (45 min)
 - [ ] Build ArrowDiagram component:
-- [ ] SVG-based circular flow
-- [ ] Animated arrows (optional)
-- [ ] Responsive sizing
-- [ ] Labels for each step
+  - [ ] SVG-based circular flow
+  - [ ] Animated arrows (optional)
+  - [ ] Responsive sizing
+  - [ ] Labels for each step
 - [ ] Create TierCard component:
-- [ ] Color-coded borders
-- [ ] Emoji support
-- [ ] Clear typography
+  - [ ] Color-coded borders
+  - [ ] Emoji support
+  - [ ] Clear typography
 - [ ] Build CodeBlock component:
-- [ ] Syntax highlighting
-- [ ] File path display
+  - [ ] Syntax highlighting
+  - [ ] File path display
 
 ## 6. Resources Page (30 min)
 - [ ] Create comprehensive resources layout
 - [ ] Organize sections:
-- [ ] Guardrails Examples
-- [ ] Command Gists
-- [ ] Tool Links
-- [ ] Templates
+  - [ ] Guardrails Examples
+  - [ ] Command Gists
+  - [ ] Tool Links
+  - [ ] Templates
 - [ ] Implement ResourceLink component:
-- [ ] External link icon
-- [ ] Hover effects
-- [ ] Clear visual hierarchy
+  - [ ] External link icon
+  - [ ] Hover effects
+  - [ ] Clear visual hierarchy
 - [ ] Add copy-to-clipboard for code snippets
 
 ## 7. Content & Links (30 min)
 - [ ] Add all external links:
-- [ ] Claude/ChatGPT/Gemini URLs
-- [ ] Gist links (3 commands)
-- [ ] Tool documentation
-- [ ] Anthropic best practices
-- [ ] Mobile Engineering Guidebook
+  - [ ] Claude/ChatGPT/Gemini URLs
+  - [ ] Gist links (3 commands)
+  - [ ] Tool documentation
+  - [ ] Anthropic best practices
+  - [ ] Mobile Engineering Guidebook
 - [ ] Create example files:
-- [ ] Sample claude.md
-- [ ] Sample .cursorrules
-- [ ] PRD template
+  - [ ] Sample claude.md
+  - [ ] Sample .cursorrules
+  - [ ] PRD template
 - [ ] Generate QR code for resources
 
 ## 8. Visual Assets (30 min)
 - [ ] Take/prepare screenshots:
-- [ ] Command line examples
-- [ ] Guardrails file examples
-- [ ] Code generation examples
+  - [ ] Command line examples
+  - [ ] Guardrails file examples
+  - [ ] Code generation examples
 - [ ] Create simple graphics:
-- [ ] Three tiers visualization
-- [ ] Tool logos/icons
+  - [ ] Three tiers visualization
+  - [ ] Tool logos/icons
 - [ ] Optimize all images
 
 ## 9. Polish & Responsiveness (30 min)
@@ -138,10 +139,11 @@ ai-tech-talk/
 npx create-next-app@latest ai-tech-talk --typescript --tailwind --app --use-npm && cd ai-tech-talk
 
 # Install all dependencies at once
-npm install framer-motion lucide-react react-use-keypress @vercel/analytics
+npm install framer-motion lucide-react react-use-keypress @vercel/analytics --legacy-peer-deps
 
 # Run development
 npm run dev
 
 # Deploy when ready
 vercel
+```

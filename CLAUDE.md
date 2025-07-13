@@ -69,3 +69,9 @@ Based on `/docs/dev-tasks.md`, the following features need implementation:
 6. Responsive design for presentation screens
 
 The presentation content outline is in `/docs/slides-outline.md` and should be faithfully implemented as the slide content.
+
+## AI Dev Tasks
+Use these files when I request structured feature development using PRDs:
+- `/ai-dev-tasks/create-prd.md` - Guidelines for creating Product Requirements Documents
+- `/ai-dev-tasks/generate-tasks.md` - Converting PRDs into actionable task lists
+- `/ai-dev-tasks/process-task-list.md` - Managing and tracking task completion

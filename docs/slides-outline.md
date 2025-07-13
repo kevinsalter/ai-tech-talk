@@ -47,7 +47,11 @@ Confidently wrong answers + I can't guide it = Danger
 - `docs/` folder - Living documentation
 - Git checkpoints before AI sessions
 
-Inspired by: [Mobile Engineering Guidebook →]
+💡 Pro tip: I keep the git tab open in my editor sidebar now
+instead of the file tree - helps me stay aware of changes and
+proof read what's being created while it's in progress
+
+Can add elements from: [Mobile Engineering Guidebook →]
 
 "The more guardrails, the more confident you can be
 in 'accept all edits' mode"
