@@ -2,7 +2,7 @@ export const PRESENTATION_CONFIG = {
   title: "You're Absolutely Right!",
   subtitle: "Some ideas and approaches I've been finding useful with AI",
   date: "July 15, 2025",
-  totalSlides: 12,
+  totalSlides: 13,
   slideTransitionDuration: 300,
   keyboardShortcuts: {
     next: ['ArrowRight', ' ', 'Enter'],

@@ -78,7 +78,7 @@ claude.md:
 process-task-list.md:
 - Controls AI workflow
 - One task at a time
-- Example: "use @ai-dev-tasks/process-task-list.md 
+- Example: "use @ai-dev-tasks/process-task-list.md
   to start section 3.0 in @docs/dev-tasks.md"
 
 [Links to example files →]
@@ -196,7 +196,28 @@ Also powerful:
 
 ---
 
-# Slide 12: Resources
+# Slide 12: My Favorite Experiment
+# From Idea to Production in One Day
+
+My favorite experiment so far:
+
+🌅 Morning: Had an idea for an app
+📝 Wrote the PRD on my lunch break
+
+🌆 In the evening I challenged myself to ship the project in that same day:
+💳 Bought the domain name
+🚀 Built the entire app
+🌙 Deployed to production by midnight
+
+→ creasetracker.com
+
+This is the kind of productivity I'm talking about with building things I'm familiar with
+
+Just a reaction to a conversation with my son the previous weekend
+
+---
+
+# Slide 13: Resources
 # Resources
 
 [short-url]

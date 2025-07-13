@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight, Home } from 'lucide-react';
 import { motion } from 'framer-motion';
+import PresentationTimer from './PresentationTimer';
 
 interface SlideLayoutProps {
   children: React.ReactNode;
@@ -24,6 +25,9 @@ export default function SlideLayout({
 
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      {/* Presentation Timer */}
+      <PresentationTimer timeLimit={300} />
+      
       {/* Main content area */}
       <motion.main
         initial={{ opacity: 0 }}

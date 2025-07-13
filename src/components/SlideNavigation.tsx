@@ -37,6 +37,10 @@ export default function SlideNavigation({ currentSlide, totalSlides }: SlideNavi
 
   // Keyboard navigation
   useKeypress(['ArrowRight', ' ', 'Enter'], (event: KeyboardEvent) => {
+    // Don't navigate with space if shift is pressed (timer control)
+    if (event.key === ' ' && event.shiftKey) {
+      return;
+    }
     event.preventDefault();
     goToNextSlide();
   });
@@ -107,7 +111,9 @@ export default function SlideNavigation({ currentSlide, totalSlides }: SlideNavi
         target.tagName === 'A' ||
         target.closest('button') ||
         target.closest('a') ||
-        target.closest('[role="button"]')
+        target.closest('[role="button"]') ||
+        target.closest('.fixed') || // Don't navigate when clicking on fixed positioned elements like timer
+        e.defaultPrevented // Check if event was already handled
       ) {
         return;
       }
@@ -125,10 +131,11 @@ export default function SlideNavigation({ currentSlide, totalSlides }: SlideNavi
       }
     };
 
-    document.addEventListener('click', handleClick);
+    // Use capture phase to check before bubbling
+    document.addEventListener('click', handleClick, true);
 
     return () => {
-      document.removeEventListener('click', handleClick);
+      document.removeEventListener('click', handleClick, true);
     };
   }, [goToNextSlide, goToPreviousSlide]);
 

@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 
 export function useSlideKeyboardShortcuts() {
   useEffect(() => {
@@ -15,16 +15,20 @@ export function useSlideKeyboardShortcuts() {
       if (event.key === '?') {
         alert(
           'Keyboard Shortcuts:\n\n' +
+          'Navigation:\n' +
           '→ or Space: Next slide\n' +
           '←: Previous slide\n' +
           'Home: First slide\n' +
           'End: Last slide\n' +
-          'R: Resources page'
+          'R: Resources page\n\n' +
+          'Timer Controls:\n' +
+          'Shift+Space: Start/Pause timer\n' +
+          'Shift+R: Reset timer'
         );
       }
 
-      // Go to resources with 'R'
-      if (event.key.toLowerCase() === 'r') {
+      // Go to resources with 'R' (only if not shift key)
+      if (event.key.toLowerCase() === 'r' && !event.shiftKey) {
         window.location.href = '/resources';
       }
     };
