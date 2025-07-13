@@ -75,6 +75,12 @@ claude.md:
 - Testing approach
 - Style preferences
 
+process-task-list.md:
+- Controls AI workflow
+- One task at a time
+- Example: "use @ai-dev-tasks/process-task-list.md 
+  to start section 3.0 in @docs/dev-tasks.md"
+
 [Links to example files →]
 
 ---

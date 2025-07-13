@@ -37,18 +37,18 @@ ai-tech-talk/
 - [x] Set up TypeScript types for slides
 - [x] Configure Tailwind for large text presentation
 
-## 3. Core Layout & Navigation (~10 min)
-- [ ] Create SlideLayout component with:
-  - [ ] Dark theme styling
-  - [ ] Consistent padding/margins
-  - [ ] Slide number indicator
-  - [ ] Resources button (floating)
-- [ ] Implement SlideNavigation:
-  - [ ] Arrow key navigation
-  - [ ] Spacebar for next
-  - [ ] Click/tap navigation
-  - [ ] Slide progress bar
-- [ ] Add keyboard event listeners
+## 3. Core Layout & Navigation (~10 min) ✅
+- [x] Create SlideLayout component with:
+  - [x] Dark theme styling
+  - [x] Consistent padding/margins
+  - [x] Slide number indicator
+  - [x] Resources button (floating)
+- [x] Implement SlideNavigation:
+  - [x] Arrow key navigation
+  - [x] Spacebar for next
+  - [x] Click/tap navigation
+  - [x] Slide progress bar
+- [x] Add keyboard event listeners
 
 ## 4. Slide Content Implementation (~15 min)
 - [ ] Create slides data structure in `/lib/slides.ts`
