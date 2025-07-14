@@ -49,14 +49,16 @@ export default function SlideContent({ slide, slideId }: SlideContentProps) {
               backgroundSize: 'cover',
               backgroundPosition: slide.backgroundImage.includes('superwhisper') ? 'center top -60px' : 'center',
               backgroundRepeat: 'no-repeat',
-              filter: (slide.backgroundImage.includes('wall-of-eyes') || slide.backgroundImage.includes('dialog') || slide.backgroundImage.includes('analysis') || slide.backgroundImage.includes('the-future')) ? 'blur(2px)' : (slide.backgroundImage.includes('guardrails') || slide.backgroundImage.includes('superwhisper') ? 'blur(1px)' : 'none'),
+              filter: (slide.backgroundImage.includes('wall-of-eyes') || slide.backgroundImage.includes('dialog') || slide.backgroundImage.includes('analysis') || slide.backgroundImage.includes('the-future') || slide.backgroundImage.includes('db')) ? 'blur(2px)' : (slide.backgroundImage.includes('guardrails') || slide.backgroundImage.includes('superwhisper') || slide.backgroundImage.includes('task-list') ? 'blur(1px)' : 'none'),
               transform: slide.backgroundImage.includes('guardrails') ? 'scale(1.1)' : 'scale(1)', // Prevents white edges when blurring
             }}
           />
           {/* Dark overlay for text readability */}
           {slide.backgroundImage.includes('superwhisper') ? (
             <div className="fixed inset-0 z-0 bg-black/20" />
-          ) : slide.backgroundImage.includes('the-future') ? (
+          ) : slide.backgroundImage.includes('task-list') ? (
+            <div className="fixed inset-0 z-0 bg-black/92" />
+          ) : (slide.backgroundImage.includes('the-future') || slide.backgroundImage.includes('db')) ? (
             <div className="fixed inset-0 z-0 bg-black/88" />
           ) : slide.backgroundImage.includes('analysis') ? (
             <div className="fixed inset-0 z-0 bg-black/85" />

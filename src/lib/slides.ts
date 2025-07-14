@@ -9,7 +9,7 @@ export const slides: Slide[] = [
     subtitle: "over",
     subtitleAfter: "tokens later...",
     subtitleImage: "/images/token-count.png",
-    footer: "🗓️  July 15, 2025",
+    footer: "🗓️\u00A0\u00A0July 15, 2025",
     githubLink: "https://github.com/kevinsalter/ai-tech-talk",
   },
 
@@ -27,6 +27,7 @@ export const slides: Slide[] = [
     id: 3,
     type: 'content',
     title: "Things I Kinda Know",
+    backgroundImage: "/images/db.jpeg",
     bullets: [
       "Database migrations:\n\"Create a migration for user preferences with JSON column\"\n→ Perfect Postgres syntax without checking docs",
       "RLS policies in PostgreSQL:\n\"Add policy for users to only see their own data\"\n→ Correct syntax I'd otherwise Google",
@@ -91,6 +92,7 @@ export const slides: Slide[] = [
     type: 'content',
     title: "Process Task List",
     subtitle: "Control AI workflow with specific instructions",
+    backgroundImage: "/images/task-list.jpeg",
     bullets: [
       "📋 Controls AI workflow systematically",
       "🎯 One task at a time - no wandering",
