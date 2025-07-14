@@ -138,7 +138,7 @@ export const slides: Slide[] = [
   {
     id: 10,
     type: 'content',
-    title: "SuperWhisper",
+    title: "superwhisper",
     subtitle: "Voice → Code",
     bullets: [
       "⚡ Faster than typing for complex logic",
@@ -158,12 +158,11 @@ export const slides: Slide[] = [
     title: "Give it eyes 👀",
     subtitle: "MCP servers that allow AI to see and interact with your running app",
     bullets: [],
-    content: "📸\u00A0\u00A0Snap Happy \n- AI sees your React Native simulator\n\n🌐\u00A0\u00A0Puppeteer/Playwright \n- Automate a web browser",
+    content: "📸\u00A0\u00A0Snap Happy \n- AI sees your React Native simulator\n\n🌐\u00A0\u00A0Playwright \n- Automate a web browser",
     footer: "",
     links: [
-      { text: "github.com/supabase/mcp", url: "https://github.com/supabase/mcp" },
       { text: "Snap Happy on Github", url: "https://github.com/badlogic/lemmy/tree/main/apps/snap-happy" },
-      { text: "playwright.dev", url: "https://playwright.dev" },
+      { text: "Using Playwright MCP with Claude Code", url: "https://til.simonwillison.net/claude-code/playwright-mcp-claude-code" },
     ],
   },
 
@@ -173,7 +172,8 @@ export const slides: Slide[] = [
     type: 'content',
     title: "When You Need Deep Analysis",
     subtitle: "The magic words:",
-    content: "\"think, think hard, ultrathink\"\n\nForces Claude to engage its deepest reasoning\nbefore responding to complex problems\n\nPerfect for:\n• Architecture decisions\n• Debugging tricky issues\n• Performance optimisation\n• Security analysis",
+    content: "\"think, think hard, ultrathink\"\n\nPerfect for:\n• Architecture decisions\n• Debugging tricky issues\n• Performance optimisation\n• Security analysis",
+    specialComponent: 'ultrathink-image',
     footer: "From Anthropic's Claude Code Best Practices",
     links: [
       {

@@ -256,6 +256,13 @@ export default function SlideContent({ slide, slideId }: SlideContentProps) {
                   className="w-full max-w-4xl mx-auto rounded-lg shadow-2xl mt-8"
                 />
               )}
+              {slide.specialComponent === 'ultrathink-image' && (
+                <img 
+                  src="/images/ultrathink.png" 
+                  alt="Ultrathink deep reasoning visualization" 
+                  className="w-full max-w-3xl mx-auto rounded-lg shadow-2xl my-8"
+                />
+              )}
             </motion.div>
           )}
           {slide.footer && (
