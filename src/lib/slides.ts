@@ -10,71 +10,88 @@ export const slides: Slide[] = [
     subtitleAfter: "tokens later...",
     subtitleImage: "/images/token-count.png",
     footer: "🗓️  July 15, 2025",
+    githubLink: "https://github.com/kevinsalter/ai-tech-talk",
   },
 
-  // Slide 2: The Development Loop
+  // Slide 2: Three Tiers of AI Help
   {
     id: 2,
     type: 'content',
-    title: "My Development Loop",
-    specialComponent: 'arrow-diagram',
+    title: "Where AI Actually Helps Me",
+    specialComponent: 'tier-cards',
+    footer: "",
   },
 
-  // Slide 3: Three Tiers of AI Help
+  // Slide 3: Foundation - Guardrails
   {
     id: 3,
     type: 'content',
-    title: "Where AI Actually Helps Me",
-    specialComponent: 'tier-cards',
-    footer: "*This talk focuses on Tiers 1 & 2*",
-  },
-
-  // Slide 4: Foundation - Guardrails
-  {
-    id: 4,
-    type: 'content',
     title: "Guardrails = Confidence",
-    subtitle: "My setup:",
+    subtitle: "",
     bullets: [
-      "`claude.md` - Project context and conventions",
-      "`.cursorrules` - Editor-specific instructions",
-      "`docs/` folder - Living documentation",
-      "Git checkpoints before AI sessions",
+      "config files - `claude.md`, `.cursorrules`, `settings.local.json`",
+      "unit tests",
+      "linters",
+      "`docs/` with PRDs, guides, etc.",
+      "Git checkpoints",
     ],
-    content: "💡 Pro tip: I keep the git tab open in my editor sidebar now\ninstead of the file tree - helps me stay aware of changes and\nproof read what's being created while it's in progress",
+    content: "",
     footer: "\"The more guardrails, the more confident you can be\nin 'accept all edits' mode\"",
     links: [{ text: "Can add elements from: Mobile Engineering Guidebook →", url: "#" }],
   },
 
-  // Slide 5: Guardrails Example
+  // Slide 4: Process Task List
   {
-    id: 5,
-    type: 'split',
-    title: "What goes in guardrails?",
-    leftContent: {
-      title: "claude.md:",
-      items: [
-        "Tech stack details",
-        "Code conventions",
-        "Component patterns",
-        "Common pitfalls",
-      ],
-    },
-    rightContent: {
-      title: ".cursorrules:",
-      items: [
-        "Import conventions",
-        "File structure",
-        "Testing approach",
-        "Style preferences",
-      ],
-    },
-    content: "process-task-list.md:\n- Controls AI workflow\n- One task at a time\n- Example: \"use @ai-dev-tasks/process-task-list.md\n  to start section 3.0 in @docs/dev-tasks.md\"",
+    id: 4,
+    type: 'content',
+    title: "Process Task List",
+    subtitle: "AI workflow control that actually works",
+    bullets: [
+      "📋 Controls AI workflow systematically",
+      "🎯 One task at a time - no wandering",
+      "✅ Clear completion criteria",
+      "🔄 Prevents AI from jumping ahead",
+    ],
+    content: "Example usage:\n```\nuse @ai-dev-tasks/process-task-list.md to start section 3.0 in @docs/dev-tasks.md\n```\n\nThe AI will:\n1. Read the task list\n2. Complete one task\n3. Mark it done\n4. Move to next task",
+    footer: "No more \"I've also improved X, Y, and Z for you\" 🎉",
+    links: [
+      { text: "github.com/snarktank/ai-dev-tasks", url: "https://github.com/snarktank/ai-dev-tasks" },
+    ],
   },
 
-  // Slide 6: The Grunt Work (Tier 1)
+  // Slide 5: Claude Hooks
+  {
+    id: 5,
+    type: 'content',
+    title: "Claude Hooks = Git Hooks for AI",
+    subtitle: "Automate actions based on Claude's behaviour",
+    bullets: [
+      "🔊 Play sound when Claude stops (my favourite!)",
+      "📝 Auto-save on tool use",
+      "🚨 Alert on errors",
+      "📊 Track usage metrics",
+    ],
+    content: "Example: Play a sound when Claude finishes\n\n```json\n\"hooks\": {\n  \"Stop\": [{\n    \"matcher\": \"\",\n    \"hooks\": [{\n      \"type\": \"command\",\n      \"command\": \"afplay /System/Library/Sounds/Blow.aiff\"\n    }]\n  }]\n}\n```",
+    footer: "Configure in .claude/settings.local.json",
+    links: [
+      { text: "Claude hooks documentation", url: "https://docs.anthropic.com/en/docs/claude-code/settings#hooks" },
+    ],
+  },
+
+  // Slide 6: Git Sidebar Pro Tip
   {
     id: 6,
+    type: 'content',
+    title: "Git Sidebar > File Tree",
+    subtitle: "",
+    content: "Helps me:\n• Stay aware of changes in real-time\n• Proof read AI's work as it's created\n• Catch unwanted changes immediately",
+    footer: "",
+    specialComponent: 'git-sidebar-image',
+  },
+
+  // Slide 7: The Grunt Work (Tier 1)
+  {
+    id: 7,
     type: 'content',
     title: "What I Delegate - Things I Know Well",
     subtitle: "The obvious:",
@@ -84,12 +101,12 @@ export const slides: Slide[] = [
       "Unit tests with all the mocks",
     ],
     content: "Any boilerplate:\n- Data fetching patterns\n- Zustand store structures\n- Loading states and error boundaries\n- Accessibility (a11y) improvements",
-    footer: "💡 I know how to do these, AI just does them 10x faster",
+    footer: "💡 Things I know how to do, but AI just does them 10x faster",
   },
 
-  // Slide 7: The Documentation Skip (Tier 2)
+  // Slide 8: The Documentation Skip (Tier 2)
   {
-    id: 7,
+    id: 8,
     type: 'content',
     title: "Things I Kinda Know",
     bullets: [
@@ -100,84 +117,59 @@ export const slides: Slide[] = [
     footer: "✨ I understand enough to verify, but skip the research",
   },
 
-  // Slide 8: Claude Code Commands
+  // Slide 9: Claude Code Commands
   {
-    id: 8,
+    id: 9,
     type: 'content',
     title: "Claude Code Commands",
     specialComponent: 'code-commands',
-    footer: "Death to \"fixed stuff\" and \"updates\" 🎉",
+    footer: "",
+    links: [
+        { text: "Custom slash commands", url: "https://docs.anthropic.com/en/docs/claude-code/slash-commands#custom-slash-commands" },
+      ],
   },
 
-  // Slide 9: My Toolkit
-  {
-    id: 9,
-    type: 'emoji-list',
-    title: "Right Tool for the Job",
-    emojiItems: [
-      {
-        emoji: "🧠",
-        title: "Claude + Claude Code",
-        description: "Deep reasoning, complex tasks",
-        link: "https://claude.ai",
-      },
-      {
-        emoji: "💬",
-        title: "ChatGPT",
-        description: "Quick questions, alternatives",
-        link: "https://chat.openai.com",
-      },
-      {
-        emoji: "🔮",
-        title: "Gemini + Gemini Code",
-        description: "Different perspective",
-        link: "https://gemini.google.com",
-      },
-      {
-        emoji: "✨",
-        title: "Cursor",
-        description: "Flow state coding\n- Background agents for continuous improvement",
-        link: "https://cursor.sh",
-      },
-      {
-        emoji: "🎤",
-        title: "SuperWhisper",
-        description: "Voice → code",
-        link: "https://superwhisper.com",
-      },
-    ],
-  },
-
-  // Slide 10: MCP Servers & Screen Sharing
+  // Slide 10: SuperWhisper
   {
     id: 10,
     type: 'content',
-    title: "AI Can See What You See",
-    subtitle: "MCP Servers (read-only!):",
+    title: "SuperWhisper",
+    subtitle: "Voice → Code",
     bullets: [
-      "📊 Supabase MCP - Database queries without fear",
+      "⚡ Faster than typing for complex logic",
+      "💭 Great for brainstorming and pseudo-code",
     ],
-    content: "Screen Sharing:\n📱 Snap Happy - AI sees your React Native simulator\n\n🌐 Puppeteer/Playwright - Web equivalent\n   AI can interact with your running app",
-    footer: "Let AI see context = better suggestions",
+    content: "",
+    footer: "",
+    links: [
+      { text: "superwhisper.com", url: "https://superwhisper.com" },
+    ],
+  },
+
+  // Slide 11: MCP Servers & Screen Sharing
+  {
+    id: 11,
+    type: 'content',
+    title: "Give it eyes 👀",
+    subtitle: "MCP servers that allow AI to see and interact with your running app",
+    bullets: [],
+    content: "📸\u00A0\u00A0Snap Happy \n- AI sees your React Native simulator\n\n🌐\u00A0\u00A0Puppeteer/Playwright \n- Automate a web browser",
+    footer: "",
     links: [
       { text: "github.com/supabase/mcp", url: "https://github.com/supabase/mcp" },
-      { text: "snaphappy.app", url: "https://snaphappy.app" },
+      { text: "Snap Happy on Github", url: "https://github.com/badlogic/lemmy/tree/main/apps/snap-happy" },
       { text: "playwright.dev", url: "https://playwright.dev" },
     ],
   },
 
-  // Slide 11: Advanced Prompting
+  // Slide 12: Ultrathink
   {
-    id: 11,
+    id: 12,
     type: 'content',
-    title: "Level Up Your Prompts",
-    subtitle: "From Anthropic's Claude Code Best Practices:",
-    content: "\"think, think hard, ultrathink\"\n\nForces deeper analysis before responding",
-    bullets: [
-      "\"How would you like me to describe this design?\"",
-      "\"What could go wrong with this approach?\"",
-      "\"Generate QA steps for what we just built\"",
-    ],
+    title: "When You Need Deep Analysis",
+    subtitle: "The magic words:",
+    content: "\"think, think hard, ultrathink\"\n\nForces Claude to engage its deepest reasoning\nbefore responding to complex problems\n\nPerfect for:\n• Architecture decisions\n• Debugging tricky issues\n• Performance optimisation\n• Security analysis",
+    footer: "From Anthropic's Claude Code Best Practices",
     links: [
       {
         text: "→ Full guide: anthropic.com/engineering/claude-code-best-practices",
@@ -186,30 +178,52 @@ export const slides: Slide[] = [
     ],
   },
 
-  // Slide 12: My Favorite Experiment
-  {
-    id: 12,
-    type: 'content',
-    title: "From Idea to Production in One Day",
-    subtitle: "My favorite experiment so far:",
-    content: "🌅 Morning (lunch break): Had an idea for an app\n📝 Wrote the PRD\n\n🌆 Evening (after work):\n💳 Bought the domain name\n🚀 Built the entire app\n🌙 Deployed to production by midnight\n\n→ creasetracker.com",
-    footer: "This is what Tier 1 productivity looks like with AI\n\nJust a reaction to a conversation with my son the previous weekend",
-  },
-
-  // Slide 13: Thank You
+  // Slide 13: Ask AI How to Be Prompted
   {
     id: 13,
     type: 'content',
-    title: "Thank You!",
-    subtitle: "The landscape changes every week!",
+    title: "Let AI Guide the Conversation",
+    subtitle: "",
     bullets: [
-      "🚀 New tools launching constantly",
-      "🎯 Workflows evolving rapidly",
-      "🧪 Experiment and find what works for you",
-      "🔄 Iterate your process weekly",
+      "\"How would you like me to describe this design?\"",
+      "\"What details do you need to implement this perfectly?\"",
+      "\"What could go wrong with this approach?\"",
+      "\"What questions should I be asking you?\"",
     ],
-    content: "It's a fun time to be building!\n\nWhat worked last month might be\nobsolete next week - embrace it!",
-    footer: "Keep experimenting, keep shipping 🎉",
+    content: "The AI knows what it needs to know\n\nLet it tell you how to provide context",
+    footer: "Stop guessing what AI needs - just ask!",
+  },
+
+  // Slide 14: My Favourite Experiment
+  {
+    id: 14,
+    type: 'content',
+    title: "From Idea to Production in One Day",
+    subtitle: "My favourite experiment so far:",
+    content: "🌅 Morning: Had an idea for an app\n\n📝 Lunch Break: Wrote the PRD\n\n🌆 Evening:\n💳 Bought the domain name\n🚀 Built the entire app\n🌙 Deployed to production by midnight",
+    links: [
+        {
+          text: "→ creasetracker.com",
+          url: "https://creasetracker.com"
+        },
+      ],
+    footer: "",
+  },
+
+  // Slide 15: What's Next - Background Agents
+  {
+    id: 15,
+    type: 'content',
+    title: "What's Next: Background Agents",
+    subtitle: "Almost there, doesn't feel far off",
+    bullets: [
+      "🤖 Background agents fixing bugs and submitting PRs",
+      "🔄 Building different iterations of solutions for a given problem or feature",
+      "🧹 Automatic tech debt cleanup",
+      "📝 Documentation that writes itself",
+    ],
+    content: "Imagine: You write feature code,\nwhile AI handles everything else in the background:\n\n• Test coverage improves automatically\n• Performance optimisations appear overnight\n• Code review suggestions before you ask",
+    footer: "🚀",
   },
 ];
 

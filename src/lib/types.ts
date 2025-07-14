@@ -23,13 +23,14 @@ export interface Slide {
     description: string;
     link?: string;
   }>;
-  specialComponent?: 'arrow-diagram' | 'tier-cards' | 'code-commands';
+  specialComponent?: 'tier-cards' | 'code-commands' | 'git-sidebar-image';
   links?: Array<{
     text: string;
     url: string;
   }>;
   footer?: string;
   notes?: string;
+  githubLink?: string;
 }
 
 export interface SlideNavigation {
