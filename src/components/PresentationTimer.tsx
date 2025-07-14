@@ -18,7 +18,6 @@ export default function PresentationTimer({ timeLimit = 300 }: PresentationTimer
   };
 
   const isOverTime = seconds > timeLimit;
-  const timeRemaining = Math.max(0, timeLimit - seconds);
   const percentageUsed = Math.min(100, (seconds / timeLimit) * 100);
 
   // Keyboard shortcuts
@@ -93,12 +92,6 @@ export default function PresentationTimer({ timeLimit = 300 }: PresentationTimer
           </div>
         </div>
 
-        {/* Time warnings */}
-        {!isOverTime && timeRemaining <= 60 && timeRemaining > 0 && (
-          <div className="text-xs text-warning mt-2 text-center animate-pulse">
-            {timeRemaining} seconds remaining!
-          </div>
-        )}
       </div>
     </div>
   );
