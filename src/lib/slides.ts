@@ -6,8 +6,10 @@ export const slides: Slide[] = [
     id: 1,
     type: 'title',
     title: "You're Absolutely Right!",
-    subtitle: "Some ideas and approaches I've been finding useful with AI",
-    footer: "July 15, 2025",
+    subtitle: "over",
+    subtitleAfter: "tokens later...",
+    subtitleImage: "/images/token-count.png",
+    footer: "🗓️  July 15, 2025",
   },
 
   // Slide 2: The Development Loop
@@ -177,9 +179,9 @@ export const slides: Slide[] = [
       "\"Generate QA steps for what we just built\"",
     ],
     links: [
-      { 
-        text: "→ Full guide: anthropic.com/engineering/claude-code-best-practices", 
-        url: "https://anthropic.com/engineering/claude-code-best-practices" 
+      {
+        text: "→ Full guide: anthropic.com/engineering/claude-code-best-practices",
+        url: "https://arc.net/l/quote/kosniooo"
       },
     ],
   },
@@ -199,15 +201,15 @@ export const slides: Slide[] = [
     id: 13,
     type: 'content',
     title: "Thank You!",
-    subtitle: "Key Takeaways:",
+    subtitle: "The landscape changes every week!",
     bullets: [
-      "Set up guardrails (claude.md, .cursorrules)",
-      "Use AI for grunt work you already know",
-      "Try different tools for different tasks",
-      "Build your own development loop",
+      "🚀 New tools launching constantly",
+      "🎯 Workflows evolving rapidly",
+      "🧪 Experiment and find what works for you",
+      "🔄 Iterate your process weekly",
     ],
-    content: "Links & Resources:\ngithub.com/kevinsalter/ai-tech-talk",
-    footer: "Questions? Let's chat!\n\n[your-email/slack]",
+    content: "It's a fun time to be building!\n\nWhat worked last month might be\nobsolete next week - embrace it!",
+    footer: "Keep experimenting, keep shipping 🎉",
   },
 ];
 

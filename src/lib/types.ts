@@ -5,6 +5,8 @@ export interface Slide {
   type: SlideType;
   title: string;
   subtitle?: string;
+  subtitleImage?: string;
+  subtitleAfter?: string;
   content?: string | string[];
   bullets?: string[];
   leftContent?: {

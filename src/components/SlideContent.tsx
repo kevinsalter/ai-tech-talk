@@ -63,17 +63,25 @@ export default function SlideContent({ slide, slideId }: SlideContentProps) {
             >
               {slide.title}
             </motion.h1>
-            {slide.subtitle && (
+            {(slide.subtitle || slide.subtitleImage) && (
               <motion.h2 
-                className="text-presentation-subtitle text-muted mb-12"
+                className="text-5xl text-muted mb-12 max-w-4xl mx-auto leading-tight font-light flex items-center justify-center gap-4"
                 variants={itemVariants}
               >
                 {slide.subtitle}
+                {slide.subtitleImage && (
+                  <img 
+                    src={slide.subtitleImage} 
+                    alt="Token count" 
+                    className="h-20 inline-block"
+                  />
+                )}
+                {slide.subtitleAfter}
               </motion.h2>
             )}
             {slide.footer && (
               <motion.p 
-                className="text-presentation-body text-muted mt-16"
+                className="text-xl text-muted absolute bottom-12 left-1/2 transform -translate-x-1/2"
                 variants={itemVariants}
               >
                 {slide.footer}
