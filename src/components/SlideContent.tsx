@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Slide } from '@/lib/types';
 import { useSlideKeyboardShortcuts } from '@/lib/hooks';
+import ArrowDiagram from './ArrowDiagram';
 
 interface SlideContentProps {
   slide: Slide;
@@ -138,12 +139,19 @@ export default function SlideContent({ slide, slideId }: SlideContentProps) {
               </motion.div>
             )}
           {slide.specialComponent && (
-            <div className="my-12">
-              {/* Special components will be rendered here */}
-              <div className="text-center text-muted italic">
-                [{slide.specialComponent} component]
-              </div>
-            </div>
+            <motion.div className="my-12" variants={itemVariants}>
+              {slide.specialComponent === 'arrow-diagram' && <ArrowDiagram />}
+              {slide.specialComponent === 'tier-cards' && (
+                <div className="text-center text-muted italic">
+                  [tier-cards component - coming soon]
+                </div>
+              )}
+              {slide.specialComponent === 'code-commands' && (
+                <div className="text-center text-muted italic">
+                  [code-commands component - coming soon]
+                </div>
+              )}
+            </motion.div>
           )}
           {slide.footer && (
             <p className="text-presentation-body text-muted mt-16">

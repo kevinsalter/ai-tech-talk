@@ -12,11 +12,18 @@ July 15, 2025
 # My Development Loop
 
 [ARROW DIAGRAM showing circular flow]:
-Brainstorm → Generate PRD → Scrutinize PRD →
-Create Task List → Scrutinize Order & Dependencies →
-Complete Tasks → Commit → Generate Tests →
-Create QA Steps → Build Test Environment →
-Write Documentation → [loops back to Brainstorm]
+Brainstorm →
+Generate PRD →
+Scrutinize PRD →
+Create Task List →
+Scrutinize Order & Dependencies of Task List →
+Complete Tasks →
+Commit →
+Generate Tests →
+Create Manual QA Steps →
+Write helper scripts (if needed) →
+Write Documentation →
+[loops back to Brainstorm]
 
 Each step leverages AI differently
 

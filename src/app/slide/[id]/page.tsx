@@ -5,13 +5,14 @@ import SlideContent from '@/components/SlideContent';
 import { getSlideById, slides } from '@/lib/slides';
 
 interface SlidePageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function SlidePage({ params }: SlidePageProps) {
-  const slideId = parseInt(params.id, 10);
+export default async function SlidePage({ params }: SlidePageProps) {
+  const { id } = await params;
+  const slideId = parseInt(id, 10);
   const slide = getSlideById(slideId);
 
   if (!slide || isNaN(slideId)) {
@@ -37,7 +38,8 @@ export async function generateStaticParams() {
 
 // Metadata generation
 export async function generateMetadata({ params }: SlidePageProps) {
-  const slideId = parseInt(params.id, 10);
+  const { id } = await params;
+  const slideId = parseInt(id, 10);
   const slide = getSlideById(slideId);
 
   if (!slide) {

@@ -62,7 +62,7 @@ ai-tech-talk/
 
 ## 5. Special Components (~15 min)
 - [ ] Build ArrowDiagram component:
-  - [ ] SVG-based circular flow
+  - [x] SVG-based circular flow
   - [ ] Animated arrows (optional)
   - [ ] Responsive sizing
   - [ ] Labels for each step

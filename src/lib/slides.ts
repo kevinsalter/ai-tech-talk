@@ -17,7 +17,6 @@ export const slides: Slide[] = [
     type: 'content',
     title: "My Development Loop",
     specialComponent: 'arrow-diagram',
-    content: "Each step leverages AI differently",
   },
 
   // Slide 3: Three Tiers of AI Help
