@@ -23,7 +23,8 @@ export interface Slide {
     description: string;
     link?: string;
   }>;
-  specialComponent?: 'tier-cards' | 'code-commands' | 'git-sidebar-image' | 'hooks-image' | 'ultrathink-image';
+  specialComponent?: 'tier-cards' | 'code-commands' | 'git-sidebar-image' | 'hooks-image' | 'ultrathink-image' | 'auto-accept-edits-image';
+  backgroundImage?: string;
   links?: Array<{
     text: string;
     url: string;

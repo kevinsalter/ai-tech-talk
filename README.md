@@ -7,12 +7,12 @@ A presentation about practical AI development workflows and tools, built with Ne
 ### Foundation & Setup
 1. **Title** - Introduction, token count visual
 2. **Three Tiers** - AI help categories (framework for thinking)
-3. **Guardrails** - Config files, tests, docs foundation
-4. **Git Sidebar Tip** - Keep git tab open (immediate practical tip)
+3. **Documentation Skip** - Syntax lookups (Tier 2 example)
+4. **Guardrails** - Config files, tests, docs foundation
+5. **Git Sidebar Tip** - Keep git tab open (immediate practical tip)
 
-### What to Delegate (Tier 1 & 2)
-5. **Grunt Work** - Forms, tests, migrations (Tier 1)
-6. **Documentation Skip** - Syntax lookups (Tier 2)
+### What to Delegate (Tier 1)
+6. **Grunt Work** - Forms, tests, migrations (Tier 1)
 
 ### Workflow Control
 7. **Process Task List** - Control AI workflow systematically

@@ -6,8 +6,14 @@ export function middleware(request: NextRequest) {
   if (request.nextUrl.pathname === '/') {
     return NextResponse.redirect(new URL('/slide/1', request.url));
   }
+  
+  // Redirect /slides/* to /slide/*
+  if (request.nextUrl.pathname.startsWith('/slides/')) {
+    const slideNumber = request.nextUrl.pathname.replace('/slides/', '');
+    return NextResponse.redirect(new URL(`/slide/${slideNumber}`, request.url));
+  }
 }
 
 export const config = {
-  matcher: '/',
+  matcher: ['/', '/slides/:path*'],
 };

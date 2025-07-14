@@ -38,43 +38,75 @@ export default function SlideContent({ slide, slideId }: SlideContentProps) {
   };
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={slideId}
-        className="max-w-6xl mx-auto"
-        variants={slideVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        transition={{ duration: 0.3, ease: 'easeInOut' }}
-      >
-        {/* GitHub Link for first slide */}
-        {slide.githubLink && (
-          <motion.a
-            href={slide.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute top-8 left-8 flex items-center gap-2 text-muted hover:text-primary transition-colors duration-200"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
+    <>
+      {/* Background Image */}
+      {slide.backgroundImage && (
+        <>
+          <div 
+            className="fixed inset-0 z-0"
+            style={{
+              backgroundImage: `url(${slide.backgroundImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: slide.backgroundImage.includes('superwhisper') ? 'center top -60px' : 'center',
+              backgroundRepeat: 'no-repeat',
+              filter: (slide.backgroundImage.includes('wall-of-eyes') || slide.backgroundImage.includes('dialog') || slide.backgroundImage.includes('analysis') || slide.backgroundImage.includes('the-future')) ? 'blur(2px)' : (slide.backgroundImage.includes('guardrails') || slide.backgroundImage.includes('superwhisper') ? 'blur(1px)' : 'none'),
+              transform: slide.backgroundImage.includes('guardrails') ? 'scale(1.1)' : 'scale(1)', // Prevents white edges when blurring
+            }}
+          />
+          {/* Dark overlay for text readability */}
+          {slide.backgroundImage.includes('superwhisper') ? (
+            <div className="fixed inset-0 z-0 bg-black/20" />
+          ) : slide.backgroundImage.includes('the-future') ? (
+            <div className="fixed inset-0 z-0 bg-black/88" />
+          ) : slide.backgroundImage.includes('analysis') ? (
+            <div className="fixed inset-0 z-0 bg-black/85" />
+          ) : slide.backgroundImage.includes('dialog') ? (
+            <div className="fixed inset-0 z-0 bg-black/90" />
+          ) : (slide.backgroundImage.includes('wall-of-eyes') || slide.backgroundImage.includes('hockey-goalie-bg')) ? (
+            <div className="fixed inset-0 z-0 bg-black/90" />
+          ) : (
+            <div className="fixed inset-0 z-0 bg-black/70 backdrop-blur-sm" />
+          )}
+        </>
+      )}
+      
+      {/* GitHub Link for first slide */}
+      {slide.githubLink && (
+        <motion.a
+          href={slide.githubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed top-8 left-8 z-20 flex items-center gap-2 text-muted hover:text-primary transition-colors duration-200"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+        >
+          <svg
+            className="w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
           >
-            <svg
-              className="w-6 h-6"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                fillRule="evenodd"
-                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                clipRule="evenodd"
-              />
-            </svg>
-            <span className="text-sm">View on GitHub</span>
-          </motion.a>
-        )}
-
+            <path
+              fillRule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              clipRule="evenodd"
+            />
+          </svg>
+          <span className="text-sm">View on GitHub</span>
+        </motion.a>
+      )}
+      
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={slideId}
+          className="max-w-6xl mx-auto relative z-10"
+          variants={slideVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+        >
         {/* Render slide content based on type */}
         {slide.type === 'title' && (
           <motion.div 
@@ -107,7 +139,7 @@ export default function SlideContent({ slide, slideId }: SlideContentProps) {
             )}
             {slide.footer && (
               <motion.p 
-                className="text-xl text-muted absolute bottom-12 left-1/2 transform -translate-x-1/2"
+                className="text-xl text-muted fixed bottom-12 left-1/2 transform -translate-x-1/2 z-10"
                 variants={itemVariants}
               >
                 {slide.footer}
@@ -137,16 +169,19 @@ export default function SlideContent({ slide, slideId }: SlideContentProps) {
             variants={contentVariants}
             initial="initial"
             animate="animate"
+            className={slide.backgroundImage ? "relative z-10 pl-40" : ""}
           >
             <motion.h1 
-              className="text-presentation-heading font-bold mb-12"
+              className={`text-presentation-heading font-bold ${
+                slide.backgroundImage?.includes('superwhisper') ? "mb-20" : "mb-12"
+              } ${slide.backgroundImage ? "text-white drop-shadow-2xl" : ""}`}
               variants={itemVariants}
             >
               {slide.title}
             </motion.h1>
             {slide.subtitle && (
               <motion.h2 
-                className="text-presentation-body font-semibold mb-8 text-muted"
+                className={`text-presentation-body font-semibold mb-8 ${slide.backgroundImage ? "text-gray-200 drop-shadow-lg" : "text-muted"}`}
                 variants={itemVariants}
               >
                 {slide.subtitle}
@@ -157,11 +192,28 @@ export default function SlideContent({ slide, slideId }: SlideContentProps) {
                 {slide.bullets.map((bullet, index) => (
                   <motion.li 
                     key={index} 
-                    className="text-presentation-body flex items-start"
+                    className={`text-presentation-body flex items-start ${slide.backgroundImage ? "text-white drop-shadow-lg" : ""}`}
                     variants={itemVariants}
                   >
-                    <span className="text-primary mr-4">•</span>
-                    <span className="whitespace-pre-line">{bullet}</span>
+                    <span className={`mr-4 ${slide.backgroundImage ? "text-yellow-400" : "text-primary"}`}>•</span>
+                    <span className="whitespace-pre-line">
+                      {bullet.split('`').map((part, i) => 
+                        i % 2 === 0 ? (
+                          <span key={i}>{part}</span>
+                        ) : (
+                          <code 
+                            key={i} 
+                            className={`px-2 py-1 rounded text-lg font-mono ${
+                              slide.backgroundImage 
+                                ? "bg-white/20 text-yellow-300" 
+                                : "bg-gray-800 text-green-400"
+                            }`}
+                          >
+                            {part}
+                          </code>
+                        )
+                      )}
+                    </span>
                   </motion.li>
                 ))}
               </motion.ul>
@@ -266,9 +318,19 @@ export default function SlideContent({ slide, slideId }: SlideContentProps) {
             </motion.div>
           )}
           {slide.footer && (
-            <p className="text-presentation-body text-muted mt-16">
+            <p className={`text-presentation-body mt-16 ${slide.backgroundImage ? "text-gray-200 drop-shadow-lg" : "text-muted"}`}>
               {slide.footer}
             </p>
+          )}
+          {/* Special component for auto-accept-edits image on slide 3 */}
+          {slide.specialComponent === 'auto-accept-edits-image' && (
+            <motion.div className="mt-8" variants={itemVariants}>
+              <img 
+                src="/images/auto-accept-edits.png" 
+                alt="Auto accept edits mode" 
+                className="w-full max-w-4xl mx-auto rounded-lg shadow-2xl"
+              />
+            </motion.div>
           )}
           {slide.links && slide.links.length > 0 && (
             <div className="mt-8 space-y-2">
@@ -276,8 +338,7 @@ export default function SlideContent({ slide, slideId }: SlideContentProps) {
                 <a
                   key={index}
                   href={link.url}
-                  className="block text-presentation-small text-primary hover:text-primary/80 
-                           transition-colors duration-200"
+                  className={`block text-presentation-small hover:opacity-80 transition-opacity duration-200 ${slide.backgroundImage ? "text-yellow-400 drop-shadow-lg" : "text-primary"}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -381,7 +442,8 @@ export default function SlideContent({ slide, slideId }: SlideContentProps) {
           </div>
         </div>
         )}
-      </motion.div>
-    </AnimatePresence>
+        </motion.div>
+      </AnimatePresence>
+    </>
   );
 }

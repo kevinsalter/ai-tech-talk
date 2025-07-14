@@ -22,12 +22,26 @@ export const slides: Slide[] = [
     footer: "",
   },
 
-  // Slide 3: Foundation - Guardrails
+  // Slide 3: The Documentation Skip (Tier 2)
   {
     id: 3,
     type: 'content',
+    title: "Things I Kinda Know",
+    bullets: [
+      "Database migrations:\n\"Create a migration for user preferences with JSON column\"\n→ Perfect Postgres syntax without checking docs",
+      "RLS policies in PostgreSQL:\n\"Add policy for users to only see their own data\"\n→ Correct syntax I'd otherwise Google",
+      "AWS configurations:\n\"Set up S3 bucket with proper CORS for uploads\"\n→ No more diving through AWS docs",
+    ],
+    footer: "✨ I understand enough to verify, but skip the research",
+  },
+
+  // Slide 4: Foundation - Guardrails
+  {
+    id: 4,
+    type: 'content',
     title: "Guardrails = Confidence",
     subtitle: "",
+    backgroundImage: "/images/guardrails.jpg",
     bullets: [
       "config files - `claude.md`, `.cursorrules`, `settings.local.json`",
       "unit tests",
@@ -36,13 +50,13 @@ export const slides: Slide[] = [
       "Git checkpoints",
     ],
     content: "",
-    footer: "\"The more guardrails, the more confident you can be\nin 'accept all edits' mode\"",
-    links: [{ text: "Can add elements from: Mobile Engineering Guidebook →", url: "#" }],
+    footer: "With more guardrails, you can move faster by enabling 'accept all edits' mode\n and worry less about it going rogue.",
+    specialComponent: 'auto-accept-edits-image',
   },
 
-  // Slide 4: Git Sidebar Pro Tip
+  // Slide 5: Git Sidebar Pro Tip
   {
-    id: 4,
+    id: 5,
     type: 'content',
     title: "Git Sidebar > File Tree",
     subtitle: "",
@@ -51,36 +65,24 @@ export const slides: Slide[] = [
     specialComponent: 'git-sidebar-image',
   },
 
-  // Slide 5: The Grunt Work (Tier 1)
+  // Slide 6: The Grunt Work (Tier 1)
   {
-    id: 5,
+    id: 6,
     type: 'content',
     title: "I want to delegate grunt work",
     subtitle: "",
+    backgroundImage: "/images/grunt-work.png",
     bullets: [
       "Forms, validation, a11y, responsive layouts",
       "Database migrations + RLS policies",
       "Unit and integration tests with all the dependencies automatically mocked",
       "Git Commit Messages",
     ],
-    content: "Any boilerplate:\n- Data fetching patterns\n- Zustand store structures\n- Loading states and error boundaries\n- Accessibility (a11y) improvements",
+    content: "Any boilerplate:\n- Data fetching patterns\n- Zustand store structures\n- New React Context\n- Loading states and error boundaries\n- Accessibility (a11y) improvements\n- reworking the order of these slides!",
     footer: "💡 AI can deliver the first draft of these things 10x faster",
     links: [
-        { text: "How to Write a Git Commit Message", url: "https://cbea.ms/git-commit/" },
+        { text: "→ How to Write a Git Commit Message", url: "https://cbea.ms/git-commit/" },
     ],
-  },
-
-  // Slide 6: The Documentation Skip (Tier 2)
-  {
-    id: 6,
-    type: 'content',
-    title: "Things I Kinda Know",
-    bullets: [
-      "Database migrations:\n\"Create a migration for user preferences with JSON column\"\n→ Perfect Postgres syntax without checking docs",
-      "RLS policies:\n\"Add policy for users to only see their own data\"\n→ Correct syntax I'd otherwise Google",
-      "AWS configurations:\n\"Set up S3 bucket with proper CORS for uploads\"\n→ No more diving through AWS docs",
-    ],
-    footer: "✨ I understand enough to verify, but skip the research",
   },
 
   // Slide 7: Process Task List
@@ -88,17 +90,17 @@ export const slides: Slide[] = [
     id: 7,
     type: 'content',
     title: "Process Task List",
-    subtitle: "AI workflow control that actually works",
+    subtitle: "Control AI workflow with specific instructions",
     bullets: [
       "📋 Controls AI workflow systematically",
       "🎯 One task at a time - no wandering",
       "✅ Clear completion criteria",
       "🔄 Prevents AI from jumping ahead",
     ],
-    content: "Example usage:\n```\nuse @ai-dev-tasks/process-task-list.md to start section 3.0 in @docs/dev-tasks.md\n```\n\nThe AI will:\n1. Read the task list\n2. Complete one task\n3. Mark it done\n4. Move to next task",
-    footer: "No more \"I've also improved X, Y, and Z for you\" 🎉",
+    content: "",
+    footer: "",
     links: [
-      { text: "github.com/snarktank/ai-dev-tasks", url: "https://github.com/snarktank/ai-dev-tasks" },
+      { text: "→ github.com/snarktank/ai-dev-tasks", url: "https://github.com/snarktank/ai-dev-tasks" },
     ],
   },
 
@@ -110,7 +112,6 @@ export const slides: Slide[] = [
     subtitle: "Add deterministic actions to Claude's behaviour",
     bullets: [
       "🔊 Play sound when Claude stops (my favourite!)",
-      "📝 Auto-save on tool use",
       "🚨 Alert on errors",
       "📊 Track usage metrics",
     ],
@@ -118,7 +119,7 @@ export const slides: Slide[] = [
     specialComponent: 'hooks-image',
     footer: "Configure in .claude/settings.json",
     links: [
-      { text: "Claude hooks documentation", url: "https://docs.anthropic.com/en/docs/claude-code/settings#hooks" },
+      { text: "→ Claude hooks documentation", url: "https://docs.anthropic.com/en/docs/claude-code/settings#hooks" },
     ],
   },
 
@@ -130,7 +131,7 @@ export const slides: Slide[] = [
     specialComponent: 'code-commands',
     footer: "",
     links: [
-        { text: "Custom slash commands", url: "https://docs.anthropic.com/en/docs/claude-code/slash-commands#custom-slash-commands" },
+        { text: "→ Custom slash commands", url: "https://docs.anthropic.com/en/docs/claude-code/slash-commands#custom-slash-commands" },
       ],
   },
 
@@ -140,6 +141,7 @@ export const slides: Slide[] = [
     type: 'content',
     title: "superwhisper",
     subtitle: "Voice → Code",
+    backgroundImage: "/images/superwhisper.png",
     bullets: [
       "⚡ Faster than typing for complex logic",
       "💭 Great for brainstorming and pseudo-code",
@@ -147,7 +149,7 @@ export const slides: Slide[] = [
     content: "",
     footer: "",
     links: [
-      { text: "superwhisper.com", url: "https://superwhisper.com" },
+      { text: "→ superwhisper.com", url: "https://superwhisper.com" },
     ],
   },
 
@@ -157,12 +159,13 @@ export const slides: Slide[] = [
     type: 'content',
     title: "Give it eyes 👀",
     subtitle: "MCP servers that allow AI to see and interact with your running app",
+    backgroundImage: "/images/wall-of-eyes.png",
     bullets: [],
     content: "📸\u00A0\u00A0Snap Happy \n- AI sees your React Native simulator\n\n🌐\u00A0\u00A0Playwright \n- Automate a web browser",
     footer: "",
     links: [
-      { text: "Snap Happy on Github", url: "https://github.com/badlogic/lemmy/tree/main/apps/snap-happy" },
-      { text: "Using Playwright MCP with Claude Code", url: "https://til.simonwillison.net/claude-code/playwright-mcp-claude-code" },
+      { text: "→ Snap Happy on Github", url: "https://github.com/badlogic/lemmy/tree/main/apps/snap-happy" },
+      { text: "→ Using Playwright MCP with Claude Code", url: "https://til.simonwillison.net/claude-code/playwright-mcp-claude-code" },
     ],
   },
 
@@ -172,6 +175,7 @@ export const slides: Slide[] = [
     type: 'content',
     title: "When You Need Deep Analysis",
     subtitle: "The magic words:",
+    backgroundImage: "/images/analysis.webp",
     content: "\"think, think hard, ultrathink\"\n\nPerfect for:\n• Architecture decisions\n• Debugging tricky issues\n• Performance optimisation\n• Security analysis",
     specialComponent: 'ultrathink-image',
     footer: "From Anthropic's Claude Code Best Practices",
@@ -189,6 +193,7 @@ export const slides: Slide[] = [
     type: 'content',
     title: "Let AI Guide the Conversation",
     subtitle: "",
+    backgroundImage: "/images/dialog.webp",
     bullets: [
       "\"How would you like me to describe this design?\"",
       "\"What details do you need to implement this perfectly?\"",
@@ -205,7 +210,8 @@ export const slides: Slide[] = [
     type: 'content',
     title: "From Idea to Production in One Day",
     subtitle: "My favourite experiment so far:",
-    content: "🌅 Morning: Had an idea for an app\n\n📝 Lunch Break: Wrote the PRD\n\n🌆 Evening:\n💳 Bought the domain name\n🚀 Built the entire app\n🌙 Deployed to production by midnight",
+    backgroundImage: "/images/hockey-goalie-bg.jpg",
+    content: "🌅 Morning: Had an idea for an app based on a conversation with my son\n\n📝 Lunch Break: Wrote the PRD\n\n🌆 Evening:\n💳 Bought the domain name\n🚀 Built the entire app\n🌙 Deployed to production by midnight",
     links: [
         {
           text: "→ creasetracker.com",
@@ -221,6 +227,7 @@ export const slides: Slide[] = [
     type: 'content',
     title: "What's Next: Background Agents",
     subtitle: "Almost there, doesn't feel far off",
+    backgroundImage: "/images/the-future.jpg",
     bullets: [
       "🤖 Background agents fixing bugs and submitting PRs",
       "🔄 Building different iterations of solutions for a given problem or feature",
