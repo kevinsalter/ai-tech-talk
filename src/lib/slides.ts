@@ -40,47 +40,9 @@ export const slides: Slide[] = [
     links: [{ text: "Can add elements from: Mobile Engineering Guidebook →", url: "#" }],
   },
 
-  // Slide 4: Process Task List
+  // Slide 4: Git Sidebar Pro Tip
   {
     id: 4,
-    type: 'content',
-    title: "Process Task List",
-    subtitle: "AI workflow control that actually works",
-    bullets: [
-      "📋 Controls AI workflow systematically",
-      "🎯 One task at a time - no wandering",
-      "✅ Clear completion criteria",
-      "🔄 Prevents AI from jumping ahead",
-    ],
-    content: "Example usage:\n```\nuse @ai-dev-tasks/process-task-list.md to start section 3.0 in @docs/dev-tasks.md\n```\n\nThe AI will:\n1. Read the task list\n2. Complete one task\n3. Mark it done\n4. Move to next task",
-    footer: "No more \"I've also improved X, Y, and Z for you\" 🎉",
-    links: [
-      { text: "github.com/snarktank/ai-dev-tasks", url: "https://github.com/snarktank/ai-dev-tasks" },
-    ],
-  },
-
-  // Slide 5: Claude Hooks
-  {
-    id: 5,
-    type: 'content',
-    title: "Claude Hooks = Git Hooks for AI",
-    subtitle: "Automate actions based on Claude's behaviour",
-    bullets: [
-      "🔊 Play sound when Claude stops (my favourite!)",
-      "📝 Auto-save on tool use",
-      "🚨 Alert on errors",
-      "📊 Track usage metrics",
-    ],
-    content: "Example: Play a sound when Claude finishes\n\n```json\n\"hooks\": {\n  \"Stop\": [{\n    \"matcher\": \"\",\n    \"hooks\": [{\n      \"type\": \"command\",\n      \"command\": \"afplay /System/Library/Sounds/Blow.aiff\"\n    }]\n  }]\n}\n```",
-    footer: "Configure in .claude/settings.local.json",
-    links: [
-      { text: "Claude hooks documentation", url: "https://docs.anthropic.com/en/docs/claude-code/settings#hooks" },
-    ],
-  },
-
-  // Slide 6: Git Sidebar Pro Tip
-  {
-    id: 6,
     type: 'content',
     title: "Git Sidebar > File Tree",
     subtitle: "",
@@ -89,9 +51,9 @@ export const slides: Slide[] = [
     specialComponent: 'git-sidebar-image',
   },
 
-  // Slide 7: The Grunt Work (Tier 1)
+  // Slide 5: The Grunt Work (Tier 1)
   {
-    id: 7,
+    id: 5,
     type: 'content',
     title: "I want to delegate grunt work",
     subtitle: "",
@@ -108,9 +70,9 @@ export const slides: Slide[] = [
     ],
   },
 
-  // Slide 8: The Documentation Skip (Tier 2)
+  // Slide 6: The Documentation Skip (Tier 2)
   {
-    id: 8,
+    id: 6,
     type: 'content',
     title: "Things I Kinda Know",
     bullets: [
@@ -121,11 +83,50 @@ export const slides: Slide[] = [
     footer: "✨ I understand enough to verify, but skip the research",
   },
 
+  // Slide 7: Process Task List
+  {
+    id: 7,
+    type: 'content',
+    title: "Process Task List",
+    subtitle: "AI workflow control that actually works",
+    bullets: [
+      "📋 Controls AI workflow systematically",
+      "🎯 One task at a time - no wandering",
+      "✅ Clear completion criteria",
+      "🔄 Prevents AI from jumping ahead",
+    ],
+    content: "Example usage:\n```\nuse @ai-dev-tasks/process-task-list.md to start section 3.0 in @docs/dev-tasks.md\n```\n\nThe AI will:\n1. Read the task list\n2. Complete one task\n3. Mark it done\n4. Move to next task",
+    footer: "No more \"I've also improved X, Y, and Z for you\" 🎉",
+    links: [
+      { text: "github.com/snarktank/ai-dev-tasks", url: "https://github.com/snarktank/ai-dev-tasks" },
+    ],
+  },
+
+  // Slide 8: Claude Hooks
+  {
+    id: 8,
+    type: 'content',
+    title: "Claude Hooks = Git Hooks for AI",
+    subtitle: "Add deterministic actions to Claude's behaviour",
+    bullets: [
+      "🔊 Play sound when Claude stops (my favourite!)",
+      "📝 Auto-save on tool use",
+      "🚨 Alert on errors",
+      "📊 Track usage metrics",
+    ],
+    content: "",
+    specialComponent: 'hooks-image',
+    footer: "Configure in .claude/settings.json",
+    links: [
+      { text: "Claude hooks documentation", url: "https://docs.anthropic.com/en/docs/claude-code/settings#hooks" },
+    ],
+  },
+
   // Slide 9: Claude Code Commands
   {
     id: 9,
     type: 'content',
-    title: "Claude Code Commands",
+    title: "Claude Code Slash Commands",
     specialComponent: 'code-commands',
     footer: "",
     links: [

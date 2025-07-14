@@ -249,6 +249,13 @@ export default function SlideContent({ slide, slideId }: SlideContentProps) {
                   className="w-full max-w-3xl mx-auto rounded-lg shadow-2xl mt-8"
                 />
               )}
+              {slide.specialComponent === 'hooks-image' && (
+                <img 
+                  src="/images/hooks.png" 
+                  alt="Claude hooks configuration example" 
+                  className="w-full max-w-4xl mx-auto rounded-lg shadow-2xl mt-8"
+                />
+              )}
             </motion.div>
           )}
           {slide.footer && (
