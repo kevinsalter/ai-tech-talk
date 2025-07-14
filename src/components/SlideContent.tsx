@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Slide } from '@/lib/types';
 import { useSlideKeyboardShortcuts } from '@/lib/hooks';
 import ArrowDiagram from './ArrowDiagram';
+import TierCard from './TierCard';
+import CodeBlock from './CodeBlock';
 
 interface SlideContentProps {
   slide: Slide;
@@ -142,14 +144,50 @@ export default function SlideContent({ slide, slideId }: SlideContentProps) {
             <motion.div className="my-12" variants={itemVariants}>
               {slide.specialComponent === 'arrow-diagram' && <ArrowDiagram />}
               {slide.specialComponent === 'tier-cards' && (
-                <div className="text-center text-muted italic">
-                  [tier-cards component - coming soon]
+                <div className="space-y-6">
+                  <TierCard
+                    tier={1}
+                    emoji="🚀"
+                    title="Things I Know Well"
+                    description="Blazing speed execution"
+                    delay={0.2}
+                  />
+                  <TierCard
+                    tier={2}
+                    emoji="📚"
+                    title="Things I Kinda Know"
+                    description="Skip the documentation diving"
+                    delay={0.4}
+                  />
+                  <TierCard
+                    tier={3}
+                    emoji="⚠️"
+                    title="Things I Don't Know"
+                    description="Confidently wrong answers + I can't guide it = Danger"
+                    delay={0.6}
+                  />
                 </div>
               )}
               {slide.specialComponent === 'code-commands' && (
-                <div className="text-center text-muted italic">
-                  [code-commands component - coming soon]
-                </div>
+                <CodeBlock
+                  commands={[
+                    {
+                      command: '/sanity-check',
+                      description: 'Instant code review',
+                      gistUrl: 'https://gist.github.com/kevinsalter/fa5ed13e068189869f4dfede91599c82'
+                    },
+                    {
+                      command: '/prime',
+                      description: 'Load context efficiently',
+                      gistUrl: 'https://gist.github.com/kevinsalter/c68e6bc51c434501605195aab24279a5'
+                    },
+                    {
+                      command: '/commit',
+                      description: 'Meaningful commit messages',
+                      gistUrl: 'https://gist.github.com/kevinsalter/1cd212bd5a4a8bd244cdcd7b384acc92'
+                    }
+                  ]}
+                />
               )}
             </motion.div>
           )}

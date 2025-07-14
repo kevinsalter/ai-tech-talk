@@ -44,15 +44,6 @@ export default function SlideLayout({
         {slideNumber} / {totalSlides}
       </div>
 
-      {/* Resources button (floating) */}
-      <Link
-        href="/resources"
-        className="absolute top-8 right-8 px-4 py-2 bg-primary/10 hover:bg-primary/20 
-                   text-primary rounded-lg transition-colors duration-200 
-                   text-sm md:text-base font-medium"
-      >
-        📱 Resources
-      </Link>
 
       {/* Navigation controls */}
       {showNavigation && (

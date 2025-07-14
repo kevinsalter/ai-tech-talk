@@ -3,7 +3,7 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
-This is a Next.js 15.3.5 presentation application for an AI tech talk. The app displays a 12-slide presentation about AI development workflows and tools, with custom navigation and interactive components.
+This is a Next.js 15.3.5 presentation application for an AI tech talk. The app displays a 13-slide presentation about AI development workflows and tools, with custom navigation and interactive components.
 
 ## Commands
 - `npm run dev` - Start development server with Turbopack
@@ -23,13 +23,11 @@ The application is built with:
 - Dynamic routing: `/slide/[id]` for individual slides
 - Keyboard navigation (arrow keys, spacebar)
 - Slide progress indicators
-- Resources page at `/resources`
 
 ### Special Components
 - **ArrowDiagram**: Circular flow diagram showing development loop
 - **TierCard**: Color-coded cards for different AI usage tiers
 - **CodeBlock**: Syntax-highlighted code snippets
-- **ResourceLink**: External links with proper icons
 
 ## Development Guidelines
 
@@ -64,9 +62,8 @@ Based on `/docs/dev-tasks.md`, the following features need implementation:
 1. Dynamic slide routing system
 2. Keyboard/touch navigation
 3. Special visualization components (ArrowDiagram, TierCard)
-4. Resources page with categorized links
-5. Slide progress indicators
-6. Responsive design for presentation screens
+4. Slide progress indicators
+5. Responsive design for presentation screens
 
 The presentation content outline is in `/docs/slides-outline.md` and should be faithfully implemented as the slide content.
 

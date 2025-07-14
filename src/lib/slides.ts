@@ -8,7 +8,6 @@ export const slides: Slide[] = [
     title: "You're Absolutely Right!",
     subtitle: "Some ideas and approaches I've been finding useful with AI",
     footer: "July 15, 2025",
-    links: [{ text: "📱 All resources", url: "#" }], // TODO: Update with actual short URL
   },
 
   // Slide 2: The Development Loop
@@ -69,7 +68,6 @@ export const slides: Slide[] = [
       ],
     },
     content: "process-task-list.md:\n- Controls AI workflow\n- One task at a time\n- Example: \"use @ai-dev-tasks/process-task-list.md\n  to start section 3.0 in @docs/dev-tasks.md\"",
-    links: [{ text: "Links to example files →", url: "#" }],
   },
 
   // Slide 6: The Grunt Work (Tier 1)
@@ -196,21 +194,20 @@ export const slides: Slide[] = [
     footer: "This is what Tier 1 productivity looks like with AI\n\nJust a reaction to a conversation with my son the previous weekend",
   },
 
-  // Slide 13: Resources
+  // Slide 13: Thank You
   {
     id: 13,
     type: 'content',
-    title: "Resources",
-    content: "[short-url]\n\nEverything mentioned:",
+    title: "Thank You!",
+    subtitle: "Key Takeaways:",
     bullets: [
-      "Example guardrail files",
-      "Command gists",
-      "Tool links & configs",
-      "MCP server examples",
-      "Templates",
-      "This presentation",
+      "Set up guardrails (claude.md, .cursorrules)",
+      "Use AI for grunt work you already know",
+      "Try different tools for different tasks",
+      "Build your own development loop",
     ],
-    footer: "If you try any of these things, let me know!\n\n[your-email/slack]",
+    content: "Links & Resources:\ngithub.com/kevinsalter/ai-tech-talk",
+    footer: "Questions? Let's chat!\n\n[your-email/slack]",
   },
 ];
 

@@ -19,17 +19,11 @@ export function useSlideKeyboardShortcuts() {
           '→ or Space: Next slide\n' +
           '←: Previous slide\n' +
           'Home: First slide\n' +
-          'End: Last slide\n' +
-          'R: Resources page\n\n' +
+          'End: Last slide\n\n' +
           'Timer Controls:\n' +
           'Shift+Space: Start/Pause timer\n' +
           'Shift+R: Reset timer'
         );
-      }
-
-      // Go to resources with 'R' (only if not shift key)
-      if (event.key.toLowerCase() === 'r' && !event.shiftKey) {
-        window.location.href = '/resources';
       }
     };
 
