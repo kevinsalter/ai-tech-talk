@@ -93,15 +93,19 @@ export const slides: Slide[] = [
   {
     id: 7,
     type: 'content',
-    title: "What I Delegate - Things I Know Well",
-    subtitle: "The obvious:",
+    title: "I want to delegate grunt work",
+    subtitle: "",
     bullets: [
-      "Forms, validation, wizards",
+      "Forms, validation, a11y, responsive layouts",
       "Database migrations + RLS policies",
-      "Unit tests with all the mocks",
+      "Unit and integration tests with all the dependencies automatically mocked",
+      "Git Commit Messages",
     ],
     content: "Any boilerplate:\n- Data fetching patterns\n- Zustand store structures\n- Loading states and error boundaries\n- Accessibility (a11y) improvements",
-    footer: "💡 Things I know how to do, but AI just does them 10x faster",
+    footer: "💡 AI can deliver the first draft of these things 10x faster",
+    links: [
+        { text: "How to Write a Git Commit Message", url: "https://cbea.ms/git-commit/" },
+    ],
   },
 
   // Slide 8: The Documentation Skip (Tier 2)
