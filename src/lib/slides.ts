@@ -33,7 +33,7 @@ export const slides: Slide[] = [
       "RLS policies in PostgreSQL:\n\"Add policy for users to only see their own data\"\n→ Correct syntax I'd otherwise Google",
       "AWS configurations:\n\"Set up S3 bucket with proper CORS for uploads\"\n→ No more diving through AWS docs",
     ],
-    footer: "✨ I understand enough to verify, but skip the research",
+    footer: "✨ I understand enough to verify, but skip the docs",
   },
 
   // Slide 4: Foundation - Guardrails
@@ -74,7 +74,7 @@ export const slides: Slide[] = [
     subtitle: "",
     backgroundImage: "/images/grunt-work.png",
     bullets: [
-      "Forms, validation, a11y, responsive layouts",
+      "Forms, validation, responsive layouts",
       "Database migrations + RLS policies",
       "Unit and integration tests with all the dependencies automatically mocked",
       "Git Commit Messages",
@@ -113,7 +113,7 @@ export const slides: Slide[] = [
     title: "Claude Hooks = Git Hooks for AI",
     subtitle: "Add deterministic actions to Claude's behaviour",
     bullets: [
-      "🔊 Play sound when Claude stops (my favourite!)",
+      "🔊 Play sound when Claude stops",
       "🚨 Alert on errors",
       "📊 Track usage metrics",
     ],
@@ -178,7 +178,7 @@ export const slides: Slide[] = [
     title: "When You Need Deep Analysis",
     subtitle: "The magic words:",
     backgroundImage: "/images/analysis.webp",
-    content: "\"think, think hard, ultrathink\"\n\nPerfect for:\n• Architecture decisions\n• Debugging tricky issues\n• Performance optimisation\n• Security analysis",
+    content: "\"think, think hard, thinker harder, ultrathink\"\n\nPerfect for:\n• Architecture decisions\n• Debugging tricky issues\n• Performance optimisation\n• Security analysis",
     specialComponent: 'ultrathink-image',
     footer: "From Anthropic's Claude Code Best Practices",
     links: [
@@ -203,7 +203,7 @@ export const slides: Slide[] = [
       "\"What questions should I be asking you?\"",
     ],
     content: "The AI knows what it needs to know\n\nLet it tell you how to provide context",
-    footer: "Stop guessing what AI needs - just ask!",
+    footer: "",
   },
 
   // Slide 14: My Favourite Experiment
@@ -211,7 +211,7 @@ export const slides: Slide[] = [
     id: 14,
     type: 'content',
     title: "From Idea to Production in One Day",
-    subtitle: "My favourite experiment so far:",
+    subtitle: "One of my favourite experiments so far:",
     backgroundImage: "/images/hockey-goalie-bg.jpg",
     content: "🌅 Morning: Had an idea for an app based on a conversation with my son\n\n📝 Lunch Break: Wrote the PRD\n\n🌆 Evening:\n💳 Bought the domain name\n🚀 Built the entire app\n🌙 Deployed to production by midnight",
     links: [
@@ -231,9 +231,9 @@ export const slides: Slide[] = [
     subtitle: "",
     backgroundImage: "/images/the-future.jpg",
     bullets: [
-      "🤖 Background agents; fixing bugs, submitting PRs, etc.",
+      "🤖 Multiple Background agents, Sub-agents",
+      "💪 It's an amplification, not a replacement",
       "🧑‍💻 Experienced developers and product managers become more valuable in the agentic coding era",
-      "💪 it's an amplification, not a replacement",
     ],
     content: "",
     footer: "🚀",
