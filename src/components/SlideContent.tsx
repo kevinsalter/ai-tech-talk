@@ -56,19 +56,9 @@ export default function SlideContent({ slide, slideId }: SlideContentProps) {
           {/* Dark overlay for text readability */}
           {slide.backgroundImage.includes('superwhisper') ? (
             <div className="fixed inset-0 z-0 bg-black/20" />
-          ) : slide.backgroundImage.includes('task-list') ? (
-            <div className="fixed inset-0 z-0 bg-black/92" />
-          ) : (slide.backgroundImage.includes('the-future') || slide.backgroundImage.includes('db')) ? (
-            <div className="fixed inset-0 z-0 bg-black/88" />
-          ) : slide.backgroundImage.includes('analysis') ? (
-            <div className="fixed inset-0 z-0 bg-black/85" />
-          ) : slide.backgroundImage.includes('dialog') ? (
+          ) : slide.backgroundImage ? (
             <div className="fixed inset-0 z-0 bg-black/90" />
-          ) : (slide.backgroundImage.includes('wall-of-eyes') || slide.backgroundImage.includes('hockey-goalie-bg')) ? (
-            <div className="fixed inset-0 z-0 bg-black/90" />
-          ) : (
-            <div className="fixed inset-0 z-0 bg-black/70 backdrop-blur-sm" />
-          )}
+          ) : null}
         </>
       )}
       

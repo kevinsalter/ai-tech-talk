@@ -227,16 +227,15 @@ export const slides: Slide[] = [
   {
     id: 15,
     type: 'content',
-    title: "What's Next: Background Agents",
-    subtitle: "Almost there, doesn't feel far off",
+    title: "What's Next?",
+    subtitle: "",
     backgroundImage: "/images/the-future.jpg",
     bullets: [
-      "🤖 Background agents fixing bugs and submitting PRs",
-      "🔄 Building different iterations of solutions for a given problem or feature",
-      "🧹 Automatic tech debt cleanup",
-      "📝 Documentation that writes itself",
+      "🤖 Background agents; fixing bugs, submitting PRs, etc.",
+      "🧑‍💻 Experienced developers and product managers become more valuable in the agentic coding era",
+      "💪 it's an amplification, not a replacement",
     ],
-    content: "Imagine: You write feature code,\nwhile AI handles everything else in the background:\n\n• Test coverage improves automatically\n• Performance optimisations appear overnight\n• Code review suggestions before you ask",
+    content: "",
     footer: "🚀",
   },
 ];
